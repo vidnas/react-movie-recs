@@ -1,0 +1,46 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  margin: auto;
+  
+  height:100%;
+  width: 100vw;
+  font-family: 'Cabin';
+}
+
+.App h1{
+  color:white;
+  margin-top:0px;
+  padding-top:20px;
+  font-size: 4em;
+  /* text-decoration: underline; */
+  font-family: 'Girassol';
+  font-weight:500;
+  /* font-style: italic; */
+}
+
+.App h2{
+  font-family: 'Girassol';
+  font-weight: 400;
+}
+
+.App *{
+  color:white;
+}
+
+.textInput{
+  background-color:black;
+  margin-bottom:10px;
+  width:50%;
+  font-size:16px;
+}
+
+.loadingscreen{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

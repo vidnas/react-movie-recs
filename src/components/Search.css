@@ -1,0 +1,16 @@
+.searchbox{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchbox input{
+    width: auto;
+    margin:10px;
+    padding:15px 20px;
+}
+
+.MovieSearch{
+    margin-bottom:3em;
+}
