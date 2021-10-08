@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './Card.css';
-import $ from 'jquery';
 import {BrowserRouter, Switch, Route, Link} from 'react-router-dom';
 
 class MovieCard extends Component {

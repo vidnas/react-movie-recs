@@ -52,11 +52,13 @@ class App extends Component {
           });
 
           movie.poster_src = "https://image.tmdb.org/t/p/w600_and_h900_bestv2" + movie.poster_path;
+          
 
           const movieRow = (
             <MovieCard key={movie.id} movie={movie} extras={extras} />
           );
           movieRows.push(movieRow);
+          
         });
 
         this.setState({ rows: movieRows });
@@ -78,6 +80,10 @@ class App extends Component {
 
     event.preventDefault();
   }
+
+  componentDidMount() {
+    document.title = "Movie Search";
+  } 
 
   render() {
     return (

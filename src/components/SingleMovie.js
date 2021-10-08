@@ -2,11 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './Card.css';
 import'./SingleMovie.css';
 import {Link} from 'react-router-dom';
-import axios from 'axios';
-import Collection from './Collection';
 
 function SingleMovie({match}){
-
     
   useEffect( () => {
         fetchMovie();             
@@ -22,8 +19,7 @@ function SingleMovie({match}){
         const singleMovie = fetchMovie;
         setSingleMovie(singleMovie);
         console.log(singleMovie);
-    };  
-
+    };
 
 
     if (singleMovie.images==null) {
@@ -45,6 +41,13 @@ function SingleMovie({match}){
 
     var backdrops = singleMovie.images.backdrops;
     var randomBackdrop = backdrops[Math.floor(Math.random() * backdrops.length)];
+    var randomBackdropPath;
+
+    if(randomBackdrop == undefined){
+      randomBackdropPath = "/xxxx.jpg";
+    } else{
+      randomBackdropPath = randomBackdrop.file_path;
+    }
 
     const recs = singleMovie.recommendations.results;
 
@@ -57,8 +60,12 @@ function SingleMovie({match}){
 
     singleMovie.maincast = [];
 
-    for(var j = 0; j < 4; j++){
-      singleMovie.maincast.push(singleMovie.credits.cast[j].name + ", ");
+    try{
+      for(var j = 0; j < 4; j++){
+        singleMovie.maincast.push(singleMovie.credits.cast[j].name + ", ");
+      }
+    } catch (e){
+      console.log("no cast");
     }
 
     function recsOpen() {
@@ -78,7 +85,7 @@ function SingleMovie({match}){
       <div
         className="singleMovieContainer"
         style={{
-          backgroundImage: `url("https://image.tmdb.org/t/p/original${randomBackdrop.file_path}`,
+          backgroundImage: `url("https://image.tmdb.org/t/p/original${randomBackdropPath}`,
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
@@ -86,7 +93,7 @@ function SingleMovie({match}){
         }}
       >
         <div className="singleMovieContent">
-          <h1>{singleMovie.original_title}</h1>
+          <a href="/"><h1>{singleMovie.original_title}</h1></a>
           <div className="singleTagLine">"{singleMovie.tagline}"</div>
           <img
             width="600px"
@@ -133,10 +140,6 @@ function SingleMovie({match}){
               </tbody>
             </table>
           </div>         
-
-          <div className="singleMovData">
-          <Collection id={singleMovie.belongs_to_collection.id}/>
-          </div>
           
           <div onClick={recsOpen}><h2 id="recsButton">See Recommended Movies</h2></div>
           <div className="recsPanel" id="recsPanelFull">
@@ -165,10 +168,7 @@ function SingleMovie({match}){
         </div>
       </div>
     );
-                    
-
+            
 }
-
-
 
 export default SingleMovie;

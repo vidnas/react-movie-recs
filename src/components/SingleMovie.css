@@ -1,6 +1,7 @@
 .singleMovieContainer{
     width:100vw;
     height:100%;
+    backdrop-filter: blur(2px);
 }
 
 .singleMovieContent{
@@ -9,13 +10,14 @@
     background-position: 'center';
     background-repeat: 'no-repeat';
     background-size: 'cover';
-    width:auto;
+    width:100vw;
     min-height:200vh;
     padding: 0px 30px;
     display: flex;
     align-content: center;
     align-items: center;
     flex-direction: column;
+    margin: auto;
 }
 
 .singleMovieContent h1{
@@ -29,12 +31,13 @@
 }
 
 .singleMovData{
+    max-width:100vw;
+    width:1200px;
     margin: 50px;
     backdrop-filter: blur(2px);
     box-shadow: 0 1px 20px rgba(0, 0, 0, 0.7); 
 	-webkit-box-shadow: 0 1px 20px rgba(0, 0, 0, 0.7); 
-	-moz-box-shadow: 0 1px 20px rgba(0, 0, 0, 0.7); 
-    
+	-moz-box-shadow: 0 1px 20px rgba(0, 0, 0, 0.7);     
 }
 
 .singleTagLine{
@@ -52,7 +55,8 @@
 }
 
 .recsPanel{
-    width:100vw;
+    max-width:100vw;
+    width:1600px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
