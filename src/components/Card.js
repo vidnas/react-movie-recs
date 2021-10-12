@@ -21,7 +21,9 @@ class MovieCard extends Component {
                 backgroundImage:`url("https://image.tmdb.org/t/p/original${this.backdropPath}")`,
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
-                backgroundSize: 'cover'
+                backgroundSize: 'cover',
+                backgroundColor: 'black',
+                backgroundBlendMode:'luminosity'
             }}>
             
                 <div className="cardContent">
