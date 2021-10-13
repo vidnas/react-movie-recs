@@ -56,3 +56,12 @@
   align-items: center;
 }
 
+@media only screen and (max-width: 768px){
+  .App h2{
+    line-height: 60px;
+  }
+
+  .App h1{
+    line-height: 105px;
+  }
+}

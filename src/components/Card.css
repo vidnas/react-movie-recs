@@ -1,20 +1,11 @@
 .cardContainer{
     margin-bottom:50px;
     border-radius: 0px;
-    /* margin: 25px 20px;
-    max-width:1200px; */
     transition:box-shadow 1s;
     padding:50px;
 }
 
 .cardContainer:hover{
-    /* box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
-                0 2px 4px rgba(255,255,255,0.07), 
-                0 4px 8px rgba(255,255,255,0.07), 
-                0 8px 16px rgba(255,255,255,0.07),
-                0 16px 32px rgba(255,255,255,0.07), 
-                0 32px 64px rgba(255,255,255,0.07);
-    transition:box-shadow 1s; */
     background-color: rgba(0,0,0,0.5) !important;
     transition: background-color 1s;
 }
@@ -68,4 +59,17 @@
     flex-direction: row;
     max-width: 1200px;
     margin: auto;
+}
+
+@media only screen and (max-width: 768px){
+    .cardContent{
+        flex-direction: column;
+        padding:20px 5px;
+    }
+    .cardContainer{
+        padding:5px;
+    }
+    .moviePoster img {
+        width: 90%;
+    }
 }
